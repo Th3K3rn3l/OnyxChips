@@ -1,0 +1,10 @@
+Phosphor Icons
+
+frofile icon: user-circle
+U+E4C4
+
+exit: door-open
+U+E7E6
+
+settings: gear-six
+U+E272
