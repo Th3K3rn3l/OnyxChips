@@ -4,14 +4,19 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class User(AbstractUser):
     role = models.CharField(max_length=15)
-    balance = models.IntegerField()
+    balance = models.IntegerField(null=True, blank=True)
 
+    def __str__(self):
+        return self.username
+    
 
 class Game(models.Model):
     game_name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.game_name
 
 class GameSession(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sessions')
